@@ -6,32 +6,71 @@
   <link rel="icon" type="image/x-icon" href="./img.ico">
   <title>Niko's Portfolio</title>
   <link rel="stylesheet" href="./styles.css"/>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 
 <body>
-  
+
+  <div class="image-container">
+    <img src="./img.png" height="500px" />
+  </div>
+
+  <script>
+    $(window).scroll(function() {
+      const s = $(window).scrollTop();
+      const blur = Math.min(10, s / 50);
+
+      const opacity = Math.max(.2, 1.0 - s / 500);
+      console.log(blur);
+      const imageContainer = $('.image-container');
+      imageContainer.css({
+        'opacity': opacity,
+        'filter': 'blur(' + blur + 'px)',
+        '-webkit-filter': 'blur(' + blur + 'px)',
+      });
+    });
+  </script>
+
   <br/>
   <div class="main-container">
 
     <h1>Niko's Portfolio</h1>
     <br/>
-  
-    <div style="width: 100%; text-align: center; display: block;">
-      <img src="./img.png" height="500px" />
-    </div>
+    <div style="width: 100%; height: 500px;"></div>
     <br/>
 
     <div style="margin-left: 10%;">
       <h2>I've done some ...</h2>
 
-      <ul>
+      <ol>
         <li>Java</li>
         <li>Artificial intelligence</li>
         <li>Adult people 👉👌</li>
-      </ul>
+      </ol>
+
+      <br/>
+      <h3>1. Java</h3>
     </div>
     
+    <code>
+
+public class Main {
+    public static void main(String... args) {
+        final String name = args[0];
+        if (name == null) {
+            System.out.println("Please give me your name!");
+        } else {
+            System.out.println("Hello world! My name is " + name + "!");
+        }
+    }
+}
+      
+    </code>
+
     <br/>
+    <div style="height: 500px;"></div>
   </div>
+
 </body>
 </html>

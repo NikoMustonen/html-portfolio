@@ -7,7 +7,6 @@ body {
 
 .main-container {
   display: block;
-  position: relative;
   margin-left: auto;
   margin-right: auto;
   width: 90%;
@@ -15,8 +14,6 @@ body {
   padding: 12px;
   background-color: #DDD;
   box-shadow: 5px 5px 5px #888;
-  perspective: 1000;
-  -webkit-perspective: 1000;
 }
 
 h1 {
@@ -42,8 +39,27 @@ h1 {
 	}
 }
 
-img {
-  
-  transform: translateZ(0px);
+.image-container {
+  width: 100%;
+  position: fixed;
+  display: block;
+  text-align: center;
+  z-index: 1;
+  margin-top: 110px;
+}
+
+img {  
 	animation: float 2.5s ease-in-out infinite;
+}
+
+code {
+  display: block;
+  white-space: pre-wrap;
+  color: greenyellow;
+  background-color: #222;
+  border-radius: 10px;
+  padding-left: 2%;
+  padding-right: 2%;
+  text-shadow: 0 0 8px #eee, 0 0 15px #eee, 0 0 25px red, 0 0 30px red, 0 0 45px red, 0 0 60px red;    
+  z-index: 2;
 }
