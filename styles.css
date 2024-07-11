@@ -1,0 +1,28 @@
+body {
+  background-color: #EEEEEE;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 0;
+}
+
+.main-container {
+  display: block;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  max-width: 600px;
+  padding: 12px;
+  background-color: #FFFFFF;
+  box-shadow: 5px 5px 5px #888;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+}
+
+img {
+  -webkit-filter: drop-shadow(5px 5px 5px #555);
+  filter: drop-shadow(5px 5px 5px #555);
+}
