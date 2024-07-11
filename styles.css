@@ -1,5 +1,5 @@
 body {
-  background-color: #EEEEEE;
+  background-color: #BBB;
   font-family: 'Courier New', Courier, monospace;
   margin: 0;
   padding: 0;
@@ -13,8 +13,10 @@ body {
   width: 90%;
   max-width: 600px;
   padding: 12px;
-  background-color: #FFFFFF;
+  background-color: #DDD;
   box-shadow: 5px 5px 5px #888;
+  perspective: 1000;
+  -webkit-perspective: 1000;
 }
 
 h1 {
@@ -22,7 +24,26 @@ h1 {
   text-align: center;
 }
 
+@keyframes float {
+	0% {
+		transform: scale(1.0);
+    -webkit-filter: drop-shadow(15px 11px 10px #222) drop-shadow(-30px -20px 12px #FFFFFF);
+    filter: drop-shadow(15px 11px 10px #222) drop-shadow(-30px -20px 12px #FFFFFF);
+	}
+	50% {
+		transform: scale(1.04);
+    -webkit-filter: drop-shadow(20px 25px 18px #222) drop-shadow(-30px -20px 12px #FFFFFF);
+    filter: drop-shadow(20px 25px 18px #222) drop-shadow(-30px -20px 12px #FFFFFF);
+	}
+	100% {
+		transform: scale(1.0);
+    -webkit-filter: drop-shadow(15px 11px 10px #222) drop-shadow(-30px -20px 12px #FFFFFF);
+    filter: drop-shadow(15px 11px 10px #222) drop-shadow(-30px -20px 12px #FFFFFF);
+	}
+}
+
 img {
-  -webkit-filter: drop-shadow(5px 5px 5px #555);
-  filter: drop-shadow(5px 5px 5px #555);
+  
+  transform: translateZ(0px);
+	animation: float 2.5s ease-in-out infinite;
 }
