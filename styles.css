@@ -3,6 +3,7 @@ body {
   font-family: 'Courier New', Courier, monospace;
   margin: 0;
   padding: 0;
+  padding-bottom: 100px;
 }
 
 .main-container {
@@ -10,10 +11,11 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 90%;
-  max-width: 600px;
+  max-width: 45em;
   padding: 12px;
   background-color: #DDD;
   box-shadow: 5px 5px 5px #888;
+  border-radius: 5px;
 }
 
 h1 {
@@ -26,9 +28,13 @@ h2 { font-size: 1.6em; }
 h3 { font-size: 1.3em; }
 h4 { font-size: 1.0em; }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, p {
   position: relative;
   z-index: 2;
+}
+
+p {
+  font-weight: bold;
 }
 
 ol {
@@ -70,7 +76,7 @@ ol {
   display: block;
   text-align: center;
   z-index: 1;
-  margin-top: 3cm;
+  margin-top: 4cm;
 }
 
 .niko {  
@@ -88,5 +94,5 @@ code {
   padding-right: 2%;
   text-shadow: 0 0 8px #eee, 0 0 15px #eee, 0 0 25px red, 0 0 30px red, 0 0 45px red, 0 0 60px red;    
   z-index: 2;
-  font-size: 0.8em;
+  font-size: 1.2em;
 }
