@@ -10,6 +10,7 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 1cm;
   width: 90%;
   max-width: 45em;
   padding: 12px;
@@ -21,15 +22,16 @@ body {
 h1 {
   width: 100%;
   text-align: center;
-  font-size: 2em;
+  font-size: 2.5em;
 }
 
-h2 { font-size: 1.6em; }
-h3 { font-size: 1.3em; }
+h2 { font-size: 2.0em; }
+h3 { font-size: 1.6em; }
 h4 { font-size: 1.0em; }
 
 h1, h2, h3, h4, p {
   position: relative;
+  font-weight: bold;
   z-index: 2;
 }
 
@@ -40,6 +42,10 @@ p {
 ol {
   position: relative;
   z-index: 2;
+}
+
+li {
+  font-weight: bold;
 }
 
 @keyframes float {
@@ -76,7 +82,7 @@ ol {
   display: block;
   text-align: center;
   z-index: 1;
-  margin-top: 5cm;
+  margin-top: 4cm;
 }
 
 .niko {  
