@@ -68,12 +68,12 @@
 import static java.lang.System.out;
 
 public class Main {
-  public static void main(String... args) {
-    final String name = args[0];
+  public static void main(String[] a) {
+    final String name = a[0];
     if (name == null) {
-      out.println("What is your name?");
+      out.println("Your name?");
     } else {
-      out.println("Hello " + name + "!");
+      out.println("Hello " + name);
     }
   }
 }
