@@ -6,30 +6,35 @@
   <link rel="icon" type="image/x-icon" href="./img.ico">
   <title>Niko's Portfolio</title>
   <link rel="stylesheet" href="./styles.css"/>
-
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 
 <body>
 
-  <div class="image-container">
-    <img src="./img.png" height="500px" />
+  <div class="image-container" id="image-container">
+    <img class="niko" id="niko" src="./img.png" height="500px" />
   </div>
 
   <script>
-    $(window).scroll(function() {
-      const s = $(window).scrollTop();
-      const blur = Math.min(10, s / 50);
 
-      const opacity = Math.max(.2, 1.0 - s / 500);
-      console.log(blur);
-      const imageContainer = $('.image-container');
-      imageContainer.css({
-        'opacity': opacity,
-        'filter': 'blur(' + blur + 'px)',
-        '-webkit-filter': 'blur(' + blur + 'px)',
-      });
-    });
+    document.addEventListener('scroll', e => {
+      
+      const imageContainerStyle = document.getElementById('image-container').style
+      const imageStyle = document.getElementById('niko').style
+      
+      let y = 0;
+      if (window.scrollY > 25) {
+        y = window.scrollY - 25
+      }
+      const blur = Math.min(7, y / 20);
+      const animationSpeed = Math.max(2, y / 20);
+      const opacity = Math.max(.6, 1.0 - y / 250);
+
+      imageContainerStyle.opacity = opacity
+      imageContainerStyle.filter = 'blur(' + blur + 'px)'
+      imageContainerStyle.webkitFilter = 'blur(' + blur + 'px)'
+
+      console.log(blur + ' ' + opacity)
+    })
   </script>
 
   <br/>
@@ -54,7 +59,9 @@
     </div>
     
     <code>
-
+/**
+© Niko Jääskeläinen
+*/
 public class Main {
     public static void main(String... args) {
         final String name = args[0];

@@ -19,21 +19,46 @@ body {
 h1 {
   width: 100%;
   text-align: center;
+  font-size: 2em;
+}
+
+h2 { font-size: 1.6em; }
+h3 { font-size: 1.3em; }
+h4 { font-size: 1.0em; }
+
+h1, h2, h3, h4 {
+  position: relative;
+  z-index: 2;
+}
+
+ol {
+  position: relative;
+  z-index: 2;
 }
 
 @keyframes float {
 	0% {
-		transform: scale(1.0);
+		transform: scale(1.0) rotate(-3deg);
     -webkit-filter: drop-shadow(15px 11px 10px #222) drop-shadow(-30px -20px 12px #FFFFFF);
     filter: drop-shadow(15px 11px 10px #222) drop-shadow(-30px -20px 12px #FFFFFF);
 	}
-	50% {
-		transform: scale(1.04);
+	25% {
+		transform: scale(1.07) rotate(0);
     -webkit-filter: drop-shadow(20px 25px 18px #222) drop-shadow(-30px -20px 12px #FFFFFF);
     filter: drop-shadow(20px 25px 18px #222) drop-shadow(-30px -20px 12px #FFFFFF);
 	}
-	100% {
-		transform: scale(1.0);
+	50% {
+		transform: scale(1.0) rotate(3deg);
+    -webkit-filter: drop-shadow(15px 11px 10px #222) drop-shadow(-30px -20px 12px #FFFFFF);
+    filter: drop-shadow(15px 11px 10px #222) drop-shadow(-30px -20px 12px #FFFFFF);
+  }
+  74% {
+		transform: scale(1.07) rotate(0);
+    -webkit-filter: drop-shadow(20px 25px 18px #222) drop-shadow(-30px -20px 12px #FFFFFF);
+    filter: drop-shadow(20px 25px 18px #222) drop-shadow(-30px -20px 12px #FFFFFF);
+	}
+  100% {
+		transform: scale(1.0) rotate(-3deg);
     -webkit-filter: drop-shadow(15px 11px 10px #222) drop-shadow(-30px -20px 12px #FFFFFF);
     filter: drop-shadow(15px 11px 10px #222) drop-shadow(-30px -20px 12px #FFFFFF);
 	}
@@ -45,15 +70,16 @@ h1 {
   display: block;
   text-align: center;
   z-index: 1;
-  margin-top: 110px;
+  margin-top: 3cm;
 }
 
-img {  
-	animation: float 2.5s ease-in-out infinite;
+.niko {  
+	animation: float 2s ease-in-out infinite;
 }
 
 code {
   display: block;
+  position: relative;
   white-space: pre-wrap;
   color: greenyellow;
   background-color: #222;
@@ -62,4 +88,5 @@ code {
   padding-right: 2%;
   text-shadow: 0 0 8px #eee, 0 0 15px #eee, 0 0 25px red, 0 0 30px red, 0 0 45px red, 0 0 60px red;    
   z-index: 2;
+  font-size: 0.8em;
 }
