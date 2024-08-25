@@ -4,108 +4,53 @@
 <head>
   <meta charset="UTF-8">
   <link rel="icon" type="image/x-icon" href="./img.ico">
-  <title>Niko's Portfolio</title>
+  <title>Fat App</title>
   <link rel="stylesheet" href="./styles.css"/>
 </head>
 
 <body>
 
-  <div class="image-container" id="image-container">
-    <img class="niko" id="niko" src="./img.png" height="500px" />
-  </div>
-
   <script>
 
-    document.addEventListener('scroll', e => {
-      
-      const imageContainerStyle = document.getElementById('image-container').style
-      const imageStyle = document.getElementById('niko').style
-      
-      let y = 0;
-      if (window.scrollY > 25) {
-        y = window.scrollY - 25
-      }
-      const blur = Math.min(7, y / 20);
-      const animationSpeed = Math.max(2, y / 20);
-      const opacity = Math.max(.6, 1.0 - y / 250);
+    function add(name, values) {
+        const ul = document.getElementById(name);
+        values.forEach(value => {
+            const li = document.createElement("li");
+            li.appendChild(document.createTextNode(value.weight));
+            ul.appendChild(li);
+        });
+    }
 
-      imageContainerStyle.opacity = opacity
-      imageContainerStyle.filter = 'blur(' + blur + 'px)'
-      imageContainerStyle.webkitFilter = 'blur(' + blur + 'px)'
-
-      console.log(blur + ' ' + opacity)
-    })
+    fetch("http://161.35.19.124:3000")
+        .then((response) => response.json())
+        .then((json) => {
+            try {
+                add('ni', json.ni)
+                add('juu', json.juu)
+                add('ju', json.ju)
+            } catch(e) {
+                alert('Failed: ' + e.message)
+            }
+        });
   </script>
 
   <div class="main-container">
 
-    <h1>Niko's Portfolio</h1>
-    <br/>
-    <div style="width: 100%; height: 500px;"></div>
-    <br/>
+    <h1>Fat App</h1>
     <br/>
 
-    <div style="margin-left: 5%; margin-right: 5%;">
-      <h2>I've done some ...</h2>
-      <ol>
-        <li>Java</li>
-        <li>Artificial intelligence</li>
-        <li>Adult people relationships</li>
-      </ol>
-
-      <br/>
-      <h2>1. Java</h2>
-      <p>Let the code speak for itself ...</p>
-    </div>
-    
-    <code>
-/**
-© Niko Jääskeläinen
-*/
-
-import static java.lang.System.out;
-
-public class Main {
-  public static void main(String[] a) {
-    final String name = a[0];
-    if (name == null) {
-      out.println("Your name?");
-    } else {
-      out.println("Hello " + name);
-    }
-  }
-}
-      
-    </code>
-    <br/><br/>
-
-    <div style="margin-left: 5%; margin-right: 5%;">
-      <h2>2. Artificial intelligence</h2>
-      <p>    
-        I'm so good at writing Artificial intelligence prompts that people call me "The Prompter".
-      </p>
-    </div>
-
-    <code>
-
-Niko: Domo arigato Mr. Roboto
-
-Artificial intelligence: 😎
-
-   </code>
-   <br/><br/>
-
-    <div style="margin-left: 5%; margin-right: 5%;">
-      <h2>3. Adult people relationships</h2>
-      <p>    
-        I like to dance in my free time and the best company for that is my adult companions.
-        Salsa, Foxtrot, Polka, Horizontal Mambo and Freestyle ... You name it, I've done it.
-      </p>
-      <br/>
-    </div>
-
+    <h2>Ni</h2>
+    <ul id="ni"></ul>
     <br/>
-    <div style="height: 1500px; margin-bottom: 100px;"></div>
+
+    <h2>Juu</h2>
+    <ul id="juu"></ul>
+    <br/>
+
+    <h2>Ju</h2>
+    <ul id="ju"></ul>
+    <br/>
+
   </div>
 
 </body>
